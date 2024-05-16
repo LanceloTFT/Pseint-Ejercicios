@@ -1,0 +1,53 @@
+Algoritmo Empresa
+	//UNA EMPRESA DE LOGISTICA ESTA PASANDO POR UN PROBLEMA YA QUE EN 
+	//LOS ULTIMOS MESES HAN HABIDO VARIAS FALTAS Y TARDANZAS DE SU 
+	//PERSONAL OCASIONANDO UN RETRASO EN LA PRODUCTIVIDAD DE LA 
+	//EMPRESA, PARA ESO LA EMPRESA IDEO UN PROPUESTA PARA INCENTIVAR 
+	//A SU PERSONAL, RECOMPENSANDO A TODOS LOS TRABAJADORES PUNTUALES 
+	//CON UN 10% DE BONO POR PUNTUALIDAD, A LOS QUE TIENEN MAS DE 
+	//5 TARDANZAS PERO MENOS DE 10 TARDANZAS EN TODO EL MES, CON UN 
+	//DESCUENTO DEL 5% DE SU SUELDO Y A LOS QUE TIENEN MAS DE 10 
+	//TARDANZAS EN TODO EL MES, SERAN PUESTOS A DISPOCISION 
+	//DE LA JUNTA PARA VER SI ES QUE CONTINUARAN TRABAJANDO 
+	//EN LA EMPRESA.
+	//Declaracion de variables
+	Definir tardanzas Como Entero;
+	Definir sueldo Como Real;
+	Definir bono Como Real;
+	Definir desc Como Real;
+	Definir men Como Caracter;
+	Definir pago_total Como Real;
+	//Entrada
+	Escribir "Ingresar sueldo: ";
+	leer sueldo;
+	Escribir "Ingresar Tardanzas: ";
+	leer tardanzas;
+	//Proceso 
+	Si tardanzas<1 Entonces
+		bono <- 10/100*sueldo;
+	SiNo
+		si tardanzas>5 y tardanzas<=10 Entonces
+			desc <- 5/100*sueldo;
+		FinSi
+	FinSi
+	
+	si tardanzas>=11 Entonces
+		men <- "Reunion con la junta";
+	sino
+		sueldo <- sueldo;
+	FinSi
+	
+	Si bono>=1 Entonces
+		pago_total <- bono+sueldo;
+	SiNo
+		pago_total <- sueldo-desc;
+	Fin Si
+	
+	//SAlida
+	Escribir "sueldo: ",sueldo;
+	Escribir "bono por puntualidad: ",bono;
+	Escribir "descuento: ",desc;
+	Escribir "pago total: ",pago_total;
+	Escribir Men;
+	
+FinAlgoritmo
